@@ -12,7 +12,9 @@ public class Main {
 
         CategoryStringService stringService = new CategoryStringService();
 
-        System.out.println(stringService.getList());
+        String list = stringService.getList();
+
+        System.out.println(list);
 
         System.out.println(stringService.getOneRecord(2));
 
