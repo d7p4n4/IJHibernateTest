@@ -2,6 +2,7 @@ package com.sycompla.service;
 
 import com.sycompla.cap.CategoryHibernateCap;
 import com.sycompla.entity.Category;
+import com.sycompla.gson.GsonCap;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class CategoryStringService {
 
         Category category = cap.getOneRecord(id);
 
-        return category.toString();
+        return new GsonCap().getObjectAsJson(category);
 
     } // getOneRecord
 
@@ -27,7 +28,7 @@ public class CategoryStringService {
 
         for(int counter = 0; counter < categories.size(); counter++) {
 
-            categoriesString += categories.get(counter).toString() + "\n";
+            categoriesString += new GsonCap().getObjectAsJson(categories.get(counter)) + "\n";
 
         }
 

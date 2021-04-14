@@ -24,11 +24,11 @@ public class Category {
 
     @Column(name = "Name")
     private String Name;
-
+/*
     @OneToMany(fetch = FetchType.LAZY,
             mappedBy = "Category",
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    private List<Product> products;
+    private List<Product> products;*/
 
     public Category() {
 
@@ -53,7 +53,7 @@ public class Category {
     public void setName(String name) {
         Name = name;
     }
-
+/*
     public List<Product> getProducts() {
         return products;
     }
@@ -61,7 +61,7 @@ public class Category {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-
+*/
     @Override
     public String toString() {
 
