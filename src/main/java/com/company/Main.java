@@ -2,6 +2,7 @@ package com.company;
 
 import com.sycompla.cap.CategoryHibernateCap;
 import com.sycompla.entity.Category;
+import com.sycompla.service.CategoryStringService;
 
 import java.util.List;
 
@@ -9,15 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        CategoryHibernateCap cap = new CategoryHibernateCap();
+        CategoryStringService stringService = new CategoryStringService();
 
-        Category category = cap.getOneRecord(1);
+        System.out.println(stringService.getList());
 
-        List<Category> categories = cap.getList();
-
-        System.out.println(category.toString());
-
-        System.out.println(categories.toString());
+        System.out.println(stringService.getOneRecord(2));
 
     }
 }
