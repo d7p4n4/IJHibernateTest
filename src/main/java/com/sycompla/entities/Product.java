@@ -1,4 +1,4 @@
-package com.sycompla.entity;
+package com.sycompla.entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

@@ -1,10 +1,6 @@
 package com.company;
 
-import com.sycompla.cap.CategoryHibernateCap;
-import com.sycompla.entity.Category;
 import com.sycompla.service.CategoryStringService;
-
-import java.util.List;
 
 public class Main {
 
