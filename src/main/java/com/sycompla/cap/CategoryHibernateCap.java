@@ -24,6 +24,34 @@ public class CategoryHibernateCap {
 
     }
 
+    public List<Category> getList() {
+
+        Session session = factory.openSession();
+
+        List<Category> categories = new ArrayList<Category>();
+
+
+        try {
+
+            session.beginTransaction();
+
+            Query<Category> theQuery =
+                    session.createQuery("from Category",
+                            Category.class);
+
+            categories = theQuery.getResultList();
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        } finally {
+            session.close();
+            //factory.close();
+        }
+
+        return  categories;
+
+    }
+
     public Category getOneRecord(int id) {
 
         Session session = factory.openSession();
@@ -35,8 +63,6 @@ public class CategoryHibernateCap {
             session.beginTransaction();
 
             category = session.get(Category.class, id);
-
-            session.getTransaction().commit();
 
 
         } catch (Exception exception) {
