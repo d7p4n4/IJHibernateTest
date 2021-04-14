@@ -33,8 +33,6 @@ public class CategoryHibernateCap {
 
         try {
 
-            session.beginTransaction();
-
             Query<Category> theQuery =
                     session.createQuery("from Category",
                             Category.class);
@@ -59,8 +57,6 @@ public class CategoryHibernateCap {
         Category category = new Category();
 
         try {
-
-            session.beginTransaction();
 
             category = session.get(Category.class, id);
 
